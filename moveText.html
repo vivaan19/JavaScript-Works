@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "above"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu.</p>
+
+    <button onclick="moveText()" id = "a_tag" style="position: sticky ;"> Click to move the above text below </button>
+
+    <p id = "below"></p>
+
+<script>
+    function moveText(){
+        let above = document.getElementById("above"); 
+        let below = document.getElementById("below");
+        let a_tag = document.getElementById("a_tag");
+
+        if(above.style.display === "none"){
+            above.style.display = "block"; 
+            below.style.display = "none";
+            a_tag.innerHTML = "Click to move the above text below"; 
+            console.log(1); 
+        }
+        else {
+            below.style.display = "block";
+            below.innerHTML = above.innerHTML;
+            above.style.display = "none";
+            a_tag.innerHTML =  "Click to move the below text above"; 
+            console.log(2);
+        }
+    }
+</script>
+
+</body>
+</html>

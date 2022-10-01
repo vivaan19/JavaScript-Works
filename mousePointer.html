@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 onclick="showCoords(event)">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt libero sed efficitur congue. Proin in malesuada augue, vel sagittis enim. Phasellus tortor felis, ultrices vehicula mauris non, eleifend dapibus risus. Nam posuere, mauris nec condimentum porttitor, nunc tellus malesuada arcu, ac tempus libero urna feugiat est. Nullam maximus placerat enim id aliquam. Aliquam erat volutpat. Sed ut ante sit amet turpis lacinia elementum. Ut suscipit eget purus ac mattis. Suspendisse in placerat massa. Fusce vel nibh ex. Sed ac nibh vitae ex tincidunt porttitor. Ut maximus turpis non orci tempor, eget rhoncus libero imperdiet. Morbi in nisi eu tortor posuere eleifend sit amet et lorem. Nulla accumsan diam est, ut sollicitudin metus ullamcorper eget. Proin pretium nisl orci, eu varius est malesuada vulputate. Ut faucibus risus vel elementum ullamcorper.</h2>
+
+<p id="demo"></p>
+
+<script>
+function showCoords(event) {
+  let x = event.clientX;
+  let y = event.clientY;
+  let coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+}
+</script>
+
+</body>
+</html>

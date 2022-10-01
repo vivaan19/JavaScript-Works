@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <p>Click the below button to display date and time in title bar</p>
+
+    <button onclick="display_ct()">
+        Change Page Title
+    </button>
+      
+    <script>
+        function display_c() {
+            var refresh=1000; // Refresh rate in milli seconds
+            let mytime=setTimeout('display_ct()',refresh)
+        }
+            
+        function display_ct() {
+            var x = new Date()
+            // change text of title bar
+            newPageTitle = x;
+            document.title = newPageTitle;
+            display_c();
+        }
+        
+    </script>
+</body>
+</html>
