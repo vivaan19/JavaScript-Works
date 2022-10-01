@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sample form for JavaScript Validation</h2>
+<h3>If a field is invalid then an alert box will popup</h3>
+
+<div style="margin: 5px; padding: 10px; font-size: medium">
+  
+    <!--  Adding Form Fields  -->
+    <!--   Initially onsubmit is false - if all the fields are validated correctly then only it would return true   -->
+
+    <form name = "myForm" action="/submit.html" onsubmit="return false" id = "sample_form">
+
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br><br>
+    
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    
+    <label for="email_field">Email:</label><br>
+    <input type="text" id="email_f" name="email_name"><br><br>
+    
+    <label for="phone_field">Mobile Number:</label><br>
+    <input type="text" id="phone_f" name="phone_name"><br><br>
+
+    <label for="address_field">Address:</label><br>
+    <textarea placeholder = "write your complete address ..." name="address_box" id="address_f" cols="50" rows="5"></textarea><br><br>
+
+    <label for="date_field">Date:</label><br>
+    <input type="text" id="date_f" name="date_name" placeholder="write in format dd/mm/yyyy"><br><br>
+      
+    <!--  using onclick attribute which redirects to formValidate() function    -->
+    
+    <input type="submit" value="Submit" onclick="formValidate()">
+    </form>
+
+</div>
+
+<script>
+    function formValidate(){
+        
+        // using flag to have logic which could differentiate fields are validated or not. 
+        // initial value of flag = 0, if validation not successfull then set flag = 1 
+      
+        let flag = 0;
+        
+        // retriving all form fields values 
+   
+        let fn = document.forms['myForm']['fname'].value; 
+        let ln = document.forms['myForm']['lname'].value; 
+        let en = document.forms['myForm']['email_f'].value;
+        let pn = document.forms['myForm']['phone_f'].value;
+        let dn = document.forms['myForm']['date_f'].value;
+      
+        // using regex for standard validation 
+
+        let regex_num = /[0-9]/g;
+        let regex_email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g; 
+        let regex_pho = /[0-9]{10}/g; 
+        let regex_date = /^[0-9]{2}\/+[0-9]{2}\/[0-9]{4}$/g; 
+      
+        // logic for validation
+        
+        if ((fn.match(regex_num) || ln.match(regex_num)) || (fn == "" || ln == "")) {
+            alert(`first name "${fn}" or last name "${ln}" cannot contain numbers and should not be empty`);
+            flag = 1;
+            //return false; 
+        }
+
+        if (!en.match(regex_email) || en == ""){
+            alert("Email address invalid or field empty");
+            flag = 1;
+            //return false; 
+        }
+
+        if (!pn.match(regex_pho) || pn == ""){
+            alert("Invalid Mobile Number - Have all 10-digits or field empty");
+            flag = 1;
+            //return false;
+        }
+
+        if (!dn.match(regex_date) || dn == "") {
+            alert("Invalid Date format or field empty");
+            flag = 1;
+            //return false;   
+        }
+  
+        // if flag = 1 then the function would return false, if not then it would take and set onsubmit attribute value to return true
+      
+        if (flag == 1){
+            return false; 
+        }
+        else{
+            document.getElementById("sample_form").setAttribute("onsubmit", "return true");
+        }
+
+         
+    }
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
