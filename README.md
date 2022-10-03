@@ -1,8 +1,9 @@
 # JavaScript-Works
 JavaScript coding and problem solving in the field of web-dev 
 
-| File-Name | Description |
+| Folder-Name | Description |
 | ----------- | ----------- |
+| **Programs** | **JavaScript practice programs** |
 | 1_formValidation.html | Form Validation using JS, **special feature** - Retain Form Fields even when pressing "OK" button of alert  |
 | 2_mousePointer.html | Captures the position of mouse pointer and displays it as X and Y coordinates |
 | 3_moveText.html | Button to move text back and forth |
